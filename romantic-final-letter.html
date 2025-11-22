@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Romantic Final Letter</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&family=Great+Vibes&family=Pacifico&family=Caveat:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Dancing Script', cursive;
+            background: linear-gradient(135deg, #ffe0f0 0%, #ffccd5 25%, #ffb3d9 50%, #ff99cc 75%, #ffcce6 100%);
+            background-size: 400% 400%;
+            animation: gradientShift 12s ease infinite;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow-x: hidden;
+            position: relative;
+        }
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        /* Floating hearts and sparkles background */
+        .floating-elements {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+            overflow: hidden;
+        }
+        .floating-heart,
+        .floating-sparkle {
+            position: absolute;
+            opacity: 0.7;
+            animation: floatAnimation 15s ease-in-out infinite;
+        }
+        @keyframes floatAnimation {
+            0%, 100% {
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.7;
+            }
+            90% {
+                opacity: 0.7;
+            }
+            100% {
+                transform: translateY(-100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+        /* Main button */
+        .open-button {
+            background: linear-gradient(145deg, #ff99cc, #ff66b3);
+            color: white;
+            border: 2px solid #ffccdd;
+            padding: 18px 36px;
+            font-size: 1.4rem;
+            font-weight: 600;
+            font-family: 'Pacifico', cursive;
+            border-radius: 20px;
+            cursor: pointer;
+            box-shadow:
+                0 10px 30px rgba(255, 102, 204, 0.4),
+                0 0 40px rgba(255, 102, 204, 0.2),
+                inset 0 2px 4px rgba(255, 255, 255, 0.3);
+            transition: all 0.3s ease;
+            position: relative;
+            z-index: 10;
+            overflow: hidden;
+            text-shadow: 0 2px 4px rgba(255, 105, 180, 0.3);
+        }
+        .open-button::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transform: rotate(45deg);
+            transition: all 0.6s ease;
+        }
+        .open-button:hover::before {
+            left: 100%;
+        }
+        .open-button:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow:
+                0 15px 40px rgba(255, 102, 204, 0.5),
+                0 0 60px rgba(255, 102, 204, 0.3),
+                inset 0 2px 4px rgba(255, 255, 255, 0.4);
+            background: linear-gradient(145deg, #ff66b3, #ff99cc);
+        }
+        .open-button:active {
+            transform: translateY(-1px) scale(1.02);
+        }
+        .open-button.hidden {
+            opacity: 0;
+            transform: scale(0.8);
+            pointer-events: none;
+        }
+        /* Letter card */
+        .letter-container {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0.7);
+            width: 90%;
+            max-width: 700px;
+            max-height: 90vh;
+            background: linear-gradient(145deg, #fff0f8, #ffe0f0, #ffcce6);
+            border-radius: 25px;
+            padding: 50px;
+            box-shadow:
+                0 25px 60px rgba(255, 102, 204, 0.3),
+                0 0 80px rgba(255, 102, 204, 0.15),
+                0 0 120px rgba(255, 102, 204, 0.08),
+                inset 0 2px 6px rgba(255, 255, 255, 0.5);
+            opacity: 0;
+            pointer-events: none;
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+            z-index: 100;
+            border: 2px solid rgba(255, 204, 221, 0.6);
+            backdrop-filter: blur(10px);
+            overflow-y: auto;
+            scrollbar-width: thin;
+            scrollbar-color: rgba(255, 102, 204, 0.3) transparent;
+        }
+        .letter-container.show {
+            opacity: 1;
+            transform: translate(-50%, -50%) scale(1);
+            pointer-events: all;
+            animation: breathe 4s ease-in-out infinite;
+        }
+        @keyframes breathe {
+            0%, 100% {
+                transform: translate(-50%, -50%) scale(1);
+            }
+            50% {
+                transform: translate(-50%, -50%) scale(1.01);
+            }
+        }
+        /* Letter heading */
+        .letter-heading {
+            font-family: 'Great Vibes', cursive;
+            font-size: 3.5rem;
+            font-weight: 700;
+            text-align: center;
+            color: #ff1493;
+            margin-bottom: 30px;
+            text-shadow:
+                0 0 20px rgba(255, 20, 147, 0.5),
+                0 0 40px rgba(255, 20, 147, 0.3),
+                0 0 60px rgba(255, 20, 147, 0.2);
+            animation: glow 3s ease-in-out infinite;
+            line-height: 1.2;
+        }
+        @keyframes glow {
+            0%, 100% {
+                text-shadow:
+                    0 0 20px rgba(255, 20, 147, 0.5),
+                    0 0 40px rgba(255, 20, 147, 0.3),
+                    0 0 60px rgba(255, 20, 147, 0.2);
+            }
+            50% {
+                text-shadow:
+                    0 0 30px rgba(255, 20, 147, 0.7),
+                    0 0 50px rgba(255, 20, 147, 0.5),
+                    0 0 70px rgba(255, 20, 147, 0.3);
+            }
+        }
+        /* Letter content */
+        .letter-content {
+            font-family: 'Caveat', cursive;
+            font-size: 1.3rem;
+            line-height: 2;
+            color: #d63384;
+            text-align: center;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            font-weight: 400;
+            margin-bottom: 30px;
+        }
+        .letter-content strong {
+            font-weight: 700;
+            color: #c2185b;
+            font-size: 1.4rem;
+        }
+        /* Romantic decoration */
+        .decoration-line {
+            width: 60%;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, #ff99cc, transparent);
+            margin: 20px auto;
+            border-radius: 2px;
+        }
+        /* Scrollbar styling */
+        .letter-container::-webkit-scrollbar {
+            width: 8px;
+        }
+        .letter-container::-webkit-scrollbar-track {
+            background: rgba(255, 204, 221, 0.1);
+            border-radius: 4px;
+        }
+        .letter-container::-webkit-scrollbar-thumb {
+            background: linear-gradient(145deg, #ff99cc, #ff66b3);
+            border-radius: 4px;
+        }
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .letter-container {
+                width: 95%;
+                max-width: 500px;
+                padding: 35px;
+            }
+            .letter-heading {
+                font-size: 2.5rem;
+            }
+            .letter-content {
+                font-size: 1.1rem;
+            }
+            .open-button {
+                padding: 15px 30px;
+                font-size: 1.2rem;
+            }
+        }
+        @media (max-width: 480px) {
+            .letter-container {
+                width: 98%;
+                padding: 25px;
+            }
+            .letter-heading {
+                font-size: 2rem;
+            }
+            .letter-content {
+                font-size: 1rem;
+            }
+            .open-button {
+                padding: 12px 24px;
+                font-size: 1rem;
+            }
+        }
+        /* Sparkle animations */
+        .sparkle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: radial-gradient(circle, #fff, #ffd700);
+            border-radius: 50%;
+            opacity: 0;
+            animation: twinkle 2s ease-in-out infinite;
+        }
+        @keyframes twinkle {
+            0%, 100% {
+                opacity: 0;
+                transform: scale(0);
+            }
+            50% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Floating background elements -->
+    <div class="floating-elements" id="floatingElements"></div>
+    <!-- Open button -->
+    <button class="open-button" id="openButton">
+        Open The Final Letter 💌
+    </button>
+    <!-- Letter container -->
+    <div class="letter-container" id="letterContainer">
+        <div class="letter-heading">
+            ✨ En Vaazhvin Oli Vizhake ✨
+        </div>
+        <div class="decoration-line"></div>
+        <div class="letter-content" id="letterContent">
+Unmaiya sollanum na…
+vaažhura oru oru second-um
+nee en pakkathulaye irukanum thonittey irukum…
+<strong>Nee yosichu pathiya…</strong>
+namma kulla adikadi sanda varra main reason
+namma kulla irukura distance thaan…
+<strong>Aanaaa…</strong>
+indha distance-thaan
+namma bonding-ah innum strong aakudhu…
+namma life-long together stay aaguradhuku
+konjam konjam ah help pannudhu…
+<strong>Ennatha sanda…</strong> misunderstanding vandhalum…
+nee enakana diiii…
+<strong>Nee dhaan en jeevan…</strong> en heartbeat…
+You are always mine 💋🎀🫶
+En aasa pondatiyeeeeeeee 💋💋💋💋💋💋
+                - Ashiksadhana🫶
+        </div>
+        <div class="decoration-line"></div>
+        <!-- Sparkles will be added here -->
+    </div>
+    <script>
+        // DOM elements
+        const openButton = document.getElementById('openButton');
+        const letterContainer = document.getElementById('letterContainer');
+        const floatingElements = document.getElementById('floatingElements');
+        const letterContent = document.getElementById('letterContent');
+        // Create floating hearts and sparkles
+        function createFloatingElements() {
+            const hearts = ['💕', '💖', '💗', '💝', '💘', '💞'];
+            const sparkles = ['✨', '⭐', '🌟', '💫'];
+            // Create hearts
+            for (let i = 0; i < 8; i++) {
+                const heart = document.createElement('div');
+                heart.className = 'floating-heart';
+                heart.textContent = hearts[Math.floor(Math.random() * hearts.length)];
+                heart.style.left = Math.random() * 100 + '%';
+                heart.style.fontSize = (Math.random() * 20 + 25) + 'px';
+                heart.style.animationDelay = Math.random() * 8 + 's';
+                heart.style.animationDuration = (Math.random() * 5 + 10) + 's';
+                floatingElements.appendChild(heart);
+            }
+            // Create sparkles
+            for (let i = 0; i < 12; i++) {
+                const sparkle = document.createElement('div');
+                sparkle.className = 'floating-sparkle';
+                sparkle.textContent = sparkles[Math.floor(Math.random() * sparkles.length)];
+                sparkle.style.left = Math.random() * 100 + '%';
+                sparkle.style.fontSize = (Math.random() * 10 + 15) + 'px';
+                sparkle.style.animationDelay = Math.random() * 10 + 's';
+                sparkle.style.animationDuration = (Math.random() * 8 + 12) + 's';
+                floatingElements.appendChild(sparkle);
+            }
+        }
+        // Create sparkles around letter heading
+        function createLetterSparkles() {
+            for (let i = 0; i < 15; i++) {
+                const sparkle = document.createElement('div');
+                sparkle.className = 'sparkle';
+                // Random position around the heading
+                const angle = (i / 15) * Math.PI * 2;
+                const radius = 100 + Math.random() * 50;
+                const x = Math.cos(angle) * radius;
+                const y = Math.sin(angle) * radius;
+                sparkle.style.left = `calc(50% + ${x}px)`;
+                sparkle.style.top = `calc(80px + ${y}px)`;
+                sparkle.style.animationDelay = Math.random() * 2 + 's';
+                letterContainer.appendChild(sparkle);
+            }
+        }
+        // Open letter animation
+        function openLetter() {
+            // Hide button with animation
+            openButton.classList.add('hidden');
+            // Show letter with animation
+            setTimeout(() => {
+                letterContainer.classList.add('show');
+                createLetterSparkles();
+            }, 200);
+        }
+        // Initialize
+        document.addEventListener('DOMContentLoaded', () => {
+            createFloatingElements();
+            // Add click listener to button
+            openButton.addEventListener('click', openLetter);
+            // Add some random sparkles to content
+            setTimeout(() => {
+                for (let i = 0; i < 8; i++) {
+                    const sparkle = document.createElement('span');
+                    sparkle.textContent = '✨';
+                    sparkle.style.color = '#ff99cc';
+                    sparkle.style.margin = '0 2px';
+                    sparkle.style.animation = 'twinkle 3s ease-in-out infinite';
+                    sparkle.style.animationDelay = Math.random() * 3 + 's';
+                    const randomPos = Math.floor(Math.random() * letterContent.textContent.length);
+                    letterContent.innerHTML =
+                        letterContent.textContent.slice(0, randomPos) +
+                        sparkle.outerHTML +
+                        letterContent.textContent.slice(randomPos);
+                }
+            }, 2000);
+        });
+        // Add smooth scroll behavior
+        letterContainer.addEventListener('wheel', (e) => {
+            if (letterContainer.scrollHeight > letterContainer.clientHeight) {
+                e.preventDefault();
+                letterContainer.scrollTop += e.deltaY * 0.5;
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,909 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Romantic Love Letter - Ultra Optimized</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Great+Vibes&family=Pacifico&display=swap');
+        /* CRITICAL PERFORMANCE CSS - No blocking renders */
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        /* ULTRA PERFORMANCE: Force GPU acceleration from the start */
+        html {
+            height: 100%;
+            overflow: hidden;
+            transform: translateZ(0);
+        }
+        body {
+            font-family: 'Dancing Script', cursive;
+            background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+            background-size: 400% 400%;
+            animation: gradientShift 15s linear infinite;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            transform: translateZ(0);
+            will-change: transform;
+            backface-visibility: hidden;
+        }
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        /* PERFORMANCE CLASSES - Reusable acceleration */
+        .gpu {
+            transform: translateZ(0);
+            backface-visibility: hidden;
+            will-change: transform;
+        }
+        .gpu-opacity {
+            transform: translateZ(0);
+            will-change: opacity, transform;
+            backface-visibility: hidden;
+        }
+        .smooth-transition {
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .no-animation {
+            animation: none !important;
+            transition: none !important;
+        }
+        /* OPTIMIZED: Minimal floating hearts for performance */
+        .floating-hearts {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+            contain: layout paint;
+            transform: translateZ(0);
+        }
+        .floating-heart {
+            position: absolute;
+            color: rgba(255, 255, 255, 0.3);
+            will-change: transform;
+            animation: floatHeart 6s linear infinite;
+            transform: translateZ(0);
+        }
+        @keyframes floatHeart {
+            0% {
+                transform: translateZ(0) translateY(100vh) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateZ(0) translateY(-100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+        /* ULTRA OPTIMIZED Letter */
+        .letter-container {
+            position: relative;
+            width: 320px;
+            height: 420px;
+            cursor: pointer;
+            z-index: 10;
+            transform: translateZ(0);
+            will-change: transform;
+        }
+        .letter-container:hover {
+            transform: translateZ(0) scale(1.02);
+        }
+        /* OPTIMIZED Envelope */
+        .envelope {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(145deg, #ffeaa7, #fdcb6e);
+            border-radius: 12px;
+            box-shadow:
+                0 15px 35px rgba(0,0,0,0.3),
+                inset 0 1px 0 rgba(255,255,255,0.5);
+            position: relative;
+            transform-style: preserve-3d;
+            transition: transform 0.4s ease;
+            will-change: transform;
+            transform: translateZ(0);
+        }
+        /* ULTRA FAST Envelope Flap */
+        .envelope-flap {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 210px;
+            background: linear-gradient(145deg, #fdcb6e, #f39c12);
+            transform-origin: top center;
+            transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+            clip-path: polygon(0 0, 100% 0, 50% 100%);
+            z-index: 10;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            will-change: transform;
+            transform: translateZ(0);
+        }
+        .envelope-flap.open {
+            transform: rotateX(-180deg) translateZ(0);
+        }
+        /* OPTIMIZED Heart Seal */
+        .heart-seal {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 70px;
+            height: 70px;
+            background: #e74c3c;
+            transform: translateZ(-50%, -50%, 0) rotate(-45deg);
+            z-index: 20;
+            cursor: pointer;
+            will-change: transform, filter;
+            transform: translateZ(-50%, -50%, 0) rotate(-45deg);
+        }
+        .heart-seal::before,
+        .heart-seal::after {
+            content: '';
+            width: 70px;
+            height: 70px;
+            position: absolute;
+            background: #e74c3c;
+            border-radius: 50%;
+        }
+        .heart-seal::before {
+            top: -35px;
+            left: 0;
+        }
+        .heart-seal::after {
+            left: 35px;
+            top: 0;
+        }
+        @keyframes heartbeat {
+            0%, 100% {
+                transform: translateZ(-50%, -50%, 0) rotate(-45deg) scale(1);
+                filter: brightness(1);
+            }
+            50% {
+                transform: translateZ(-50%, -50%, 0) rotate(-45deg) scale(1.1);
+                filter: brightness(1.2);
+            }
+        }
+        /* ULTRA FAST Letter Opening */
+        .letter-open {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            width: 550px;
+            min-height: 650px;
+            background: linear-gradient(145deg, #fff8f0, #ffe5cc);
+            border-radius: 15px;
+            padding: 50px;
+            box-shadow:
+                0 25px 60px rgba(0,0,0,0.4),
+                inset 0 1px 0 rgba(255,255,255,0.8);
+            opacity: 0;
+            transform: translateZ(-50%, -50%, 0) scale(0.1) rotateY(90deg);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+            display: none;
+            z-index: 100;
+            overflow: hidden;
+            will-change: transform, opacity;
+        }
+        .letter-open.show {
+            opacity: 1;
+            transform: translateZ(-50%, -50%, 0) scale(1) rotateY(0);
+            display: block;
+        }
+        .letter-content {
+            position: relative;
+            font-size: 26px;
+            line-height: 2;
+            color: #5d4e37;
+            text-align: center;
+            z-index: 1;
+            will-change: transform, opacity;
+            transform: translateZ(0);
+        }
+        .letter-content h2 {
+            font-size: 32px;
+            color: #e74c3c;
+            margin-bottom: 20px;
+            font-family: 'Great Vibes', cursive;
+        }
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateZ(0) translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateZ(0) translateY(0);
+            }
+        }
+        /* OPTIMIZED Buttons */
+        .action-button {
+            background: linear-gradient(145deg, #ff6b9d, #c44569);
+            color: white;
+            border: none;
+            padding: 18px 40px;
+            font-size: 20px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-family: 'Pacifico', cursive;
+            font-weight: 700;
+            box-shadow:
+                0 15px 35px rgba(0,0,0,0.3),
+                inset 0 1px 0 rgba(255,255,255,0.3);
+            transition: all 0.2s ease;
+            margin-top: 40px;
+            display: inline-block;
+            opacity: 0;
+            transform: translateZ(0) translateY(20px) scale(0.9);
+            animation: fadeInUp 0.4s ease forwards;
+            position: relative;
+            overflow: hidden;
+            will-change: transform, box-shadow;
+            transform: translateZ(0) translateY(20px) scale(0.9);
+        }
+        .action-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: left 0.3s ease;
+            will-change: transform;
+        }
+        .action-button:hover::before {
+            left: 100%;
+        }
+        .action-button:hover {
+            transform: translateZ(0) translateY(-5px) scale(1.05);
+            box-shadow:
+                0 20px 45px rgba(0,0,0,0.4),
+                inset 0 1px 0 rgba(255,255,255,0.4);
+        }
+        .action-button:active {
+            transform: translateZ(0) translateY(-2px) scale(1.02);
+        }
+        .action-button.hidden {
+            display: none;
+        }
+        /* OPTIMIZED Music Toggle */
+        .music-container {
+            position: fixed;
+            top: 30px;
+            right: 30px;
+            z-index: 1000;
+        }
+        .music-toggle {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(145deg, #ff6b9d, #c44569);
+            border: none;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+            box-shadow:
+                0 10px 25px rgba(0,0,0,0.3),
+                inset 0 1px 0 rgba(255,255,255,0.3);
+            transition: all 0.2s ease;
+            position: relative;
+            overflow: hidden;
+            will-change: transform, box-shadow;
+            transform: translateZ(0);
+        }
+        .music-toggle:hover {
+            transform: translateZ(0) scale(1.1) rotate(5deg);
+            box-shadow:
+                0 15px 35px rgba(0,0,0,0.4),
+                inset 0 1px 0 rgba(255,255,255,0.4);
+        }
+        .music-toggle.playing {
+            animation: pulse 1.5s ease-in-out infinite;
+        }
+        @keyframes pulse {
+            0%, 100% {
+                transform: translateZ(0) scale(1);
+                box-shadow:
+                    0 10px 25px rgba(0,0,0,0.3),
+                    0 0 0 0 rgba(255, 107, 157, 0.4);
+            }
+            50% {
+                transform: translateZ(0) scale(1.05);
+                box-shadow:
+                    0 15px 35px rgba(0,0,0,0.4),
+                    0 0 0 15px rgba(255, 107, 157, 0);
+            }
+        }
+        /* ULTRA FAST Slideshow */
+        .slideshow-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: none;
+            z-index: 200;
+            background: rgba(0,0,0,0.85);
+            backdrop-filter: blur(5px);
+            will-change: opacity;
+        }
+        .slideshow-container.show {
+            display: block;
+        }
+        .slideshow-image {
+            position: absolute;
+            width: 350px;
+            height: 450px;
+            object-fit: cover;
+            border-radius: 20px;
+            box-shadow:
+                0 25px 60px rgba(0,0,0,0.6),
+                0 0 0 2px rgba(255,255,255,0.1);
+            opacity: 0;
+            transform: translateZ(0) scale(0.8) rotate(-2deg);
+            filter: brightness(0.9);
+            display: none;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            will-change: transform, opacity, filter;
+        }
+        .slideshow-image.show {
+            display: block;
+            opacity: 1;
+            transform: translateZ(0) scale(1) rotate(0deg);
+            filter: brightness(1);
+            animation: hangImage 4s ease-in-out infinite;
+        }
+        @keyframes hangImage {
+            0%, 100% {
+                transform: translateZ(0) rotate(-2deg);
+            }
+            25% {
+                transform: translateZ(-10px, 0) rotate(-1deg);
+            }
+            50% {
+                transform: translateZ(0, -15px, 0) rotate(1deg);
+            }
+            75% {
+                transform: translateZ(-5px, 0) rotate(0deg);
+            }
+        }
+        /* OPTIMIZED Fairy Lights */
+        .fairy-lights {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 250;
+            display: none;
+            contain: layout paint;
+            transform: translateZ(0);
+        }
+        .fairy-lights.show {
+            display: block;
+        }
+        .light {
+            position: absolute;
+            border-radius: 50%;
+            opacity: 0;
+            will-change: transform, opacity, filter;
+        }
+        .light-bulb {
+            width: 14px;
+            height: 18px;
+            background: radial-gradient(circle at 30% 30%, #fff9c4, #ffd54f, #ff6f00);
+            border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+            box-shadow:
+                0 0 15px currentColor,
+                0 0 30px currentColor;
+            transform: translateZ(0);
+        }
+        .light-string {
+            width: 1px;
+            height: 25px;
+            background: linear-gradient(to bottom, #666, #333);
+            position: absolute;
+            top: -25px;
+            left: 50%;
+            transform: translateZ(-50%, 0, 0);
+        }
+        .light-gold { color: #ffd700; }
+        .light-pink { color: #ff69b4; }
+        .light-warm { color: #ffa500; }
+        .light-purple { color: #9370db; }
+        @keyframes twinkle {
+            0%, 100% {
+                opacity: 0;
+                transform: translateZ(0) scale(0.5);
+                filter: brightness(0.5);
+            }
+            50% {
+                opacity: 1;
+                transform: translateZ(0) scale(1);
+                filter: brightness(1.2);
+            }
+        }
+        @keyframes gentleGlow {
+            0%, 100% {
+                opacity: 0.7;
+                transform: translateZ(0) scale(1);
+                filter: brightness(0.9);
+            }
+            50% {
+                opacity: 1;
+                transform: translateZ(0) scale(1.05);
+                filter: brightness(1.1);
+            }
+        }
+        /* ULTRA FAST Final Text */
+        .final-text {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translateZ(-50%, -50%, 0) scale(0);
+            font-family: 'Great Vibes', cursive;
+            font-size: 5rem;
+            color: #fff;
+            text-align: center;
+            line-height: 1.2;
+            z-index: 300;
+            opacity: 0;
+            display: none;
+            text-shadow:
+                0 0 30px rgba(255, 107, 157, 0.8),
+                0 0 60px rgba(255, 107, 157, 0.6);
+            will-change: transform, opacity;
+            transform: translateZ(-50%, -50%, 0) scale(0);
+        }
+        .final-text.show {
+            opacity: 1;
+            transform: translateZ(-50%, -50%, 0) scale(1);
+            display: block;
+            animation: glowText 3s ease-in-out infinite;
+        }
+        @keyframes glowText {
+            0%, 100% {
+                text-shadow:
+                    0 0 30px rgba(255, 107, 157, 0.8),
+                    0 0 60px rgba(255, 107, 157, 0.6);
+            }
+            50% {
+                text-shadow:
+                    0 0 50px rgba(255, 107, 157, 1),
+                    0 0 100px rgba(255, 107, 157, 0.8);
+            }
+        }
+        /* OPTIMIZED Sparkles */
+        .sparkle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: radial-gradient(circle, #fff, #ffd700);
+            border-radius: 50%;
+            opacity: 0;
+            box-shadow: 0 0 8px #ffd700;
+            will-change: transform, opacity;
+        }
+        @keyframes sparkle {
+            0%, 100% {
+                opacity: 0;
+                transform: translateZ(0) scale(0);
+            }
+            50% {
+                opacity: 1;
+                transform: translateZ(0) scale(1);
+            }
+        }
+        /* ULTRA FAST Loading */
+        .loading-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            opacity: 1;
+            transition: opacity 0.3s ease;
+            will-change: opacity;
+        }
+        .loading-overlay.hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+        .loading-text {
+            color: white;
+            font-size: 24px;
+            font-family: 'Pacifico', cursive;
+            animation: pulse 1s ease-in-out infinite;
+            will-change: transform;
+        }
+        /* PERFORMANCE CRITICAL: Disable animations on low-end devices */
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+        /* Responsive Design - OPTIMIZED */
+        @media (max-width: 768px) {
+            .letter-container {
+                width: 280px;
+                height: 370px;
+            }
+            .letter-open {
+                width: 90%;
+                min-height: 550px;
+                padding: 40px;
+            }
+            .letter-content {
+                font-size: 22px;
+            }
+            .letter-content h2 {
+                font-size: 28px;
+            }
+            .final-text {
+                font-size: 3.5rem;
+            }
+            .slideshow-image {
+                width: 280px;
+                height: 360px;
+            }
+            .action-button {
+                padding: 15px 30px;
+                font-size: 18px;
+            }
+            .music-toggle {
+                width: 50px;
+                height: 50px;
+                font-size: 20px;
+            }
+        }
+        @media (max-width: 480px) {
+            .letter-container {
+                width: 240px;
+                height: 320px;
+            }
+            .letter-open {
+                width: 95%;
+                padding: 30px;
+                min-height: 500px;
+            }
+            .letter-content {
+                font-size: 20px;
+            }
+            .letter-content h2 {
+                font-size: 24px;
+            }
+            .final-text {
+                font-size: 2.8rem;
+            }
+            .slideshow-image {
+                width: 220px;
+                height: 300px;
+            }
+            .action-button {
+                padding: 12px 25px;
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Loading Overlay -->
+    <div class="loading-overlay gpu-opacity" id="loadingOverlay">
+        <div class="loading-text gpu">Preparing something special... 💕</div>
+    </div>
+    <!-- Floating Background Hearts -->
+    <div class="floating-hearts gpu" id="floatingHearts"></div>
+    <!-- Letter Container -->
+    <div class="letter-container gpu" id="letterContainer">
+        <div class="envelope gpu" id="envelope">
+            <div class="envelope-flap gpu" id="envelopeFlap"></div>
+            <div class="heart-seal gpu" id="heartSeal"></div>
+        </div>
+    </div>
+    <!-- Open Letter -->
+    <div class="letter-open gpu" id="letterOpen">
+        <div class="letter-content gpu">
+            <h2>My Dearest Love,</h2>
+            <p>Every moment with you feels like a beautiful dream come true. Your smile brightens my entire world, and your love fills my heart with endless joy and happiness.</p>
+            <p>You are my everything, my forever, my always. I cherish every second we spend together.</p>
+            <p>With all my love and my entire heart,</p>
+            <p>Forever yours 💕</p>
+        </div>
+        <button class="action-button gpu" id="viewMoreBtn" style="display: none;">View More</button>
+        <button class="action-button gpu hidden" id="nextBtn">Next</button>
+    </div>
+    <!-- Music Toggle -->
+    <div class="music-container">
+        <button class="music-toggle gpu" id="musicToggle" style="display: none;">🎵</button>
+    </div>
+    <!-- Image Slideshow -->
+    <div class="slideshow-container gpu-opacity" id="slideshowContainer">
+        <!-- Images will be added dynamically -->
+    </div>
+    <!-- Fairy Lights -->
+    <div class="fairy-lights gpu" id="fairyLights">
+        <!-- Lights will be added dynamically -->
+    </div>
+    <!-- Final Text -->
+    <div class="final-text gpu" id="finalText">
+        I LOVE YOU FOREVER<br>BUJUKKKUUU 💕
+    </div>
+    <!-- Hidden Audio Element -->
+    <audio id="backgroundMusic" loop preload="none">
+        <source src="https://www.bensound.com/bensound-music/bensound-romantic.mp3" type="audio/mpeg">
+        <source src="https://www.bensound.com/bensound-music/bensound-sweet.mp3" type="audio/mpeg">
+    </audio>
+    <script>
+        // ULTRA PERFORMANCE JavaScript
+        // Cache DOM elements immediately
+        const cache = {
+            loading: document.getElementById('loadingOverlay'),
+            hearts: document.getElementById('floatingHearts'),
+            container: document.getElementById('letterContainer'),
+            envelope: document.getElementById('envelope'),
+            flap: document.getElementById('envelopeFlap'),
+            heart: document.getElementById('heartSeal'),
+            letter: document.getElementById('letterOpen'),
+            viewMore: document.getElementById('viewMoreBtn'),
+            next: document.getElementById('nextBtn'),
+            music: document.getElementById('musicToggle'),
+            audio: document.getElementById('backgroundMusic'),
+            slideshow: document.getElementById('slideshowContainer'),
+            lights: document.getElementById('fairyLights'),
+            final: document.getElementById('finalText')
+        };
+        // State management
+        const state = {
+            step: 'loading',
+            imageIndex: 0,
+            musicPlaying: false,
+            timer: null
+        };
+        // Images
+        const images = [
+            'https://t3.ftcdn.net/jpg/02/24/46/02/360_F_224460249_zx5jOIw0qvpC0lzqfHZ0PvyLNO5dsVBh.jpg',
+            'https://images.unsplash.com/photo-1518199266791-5375a83190b7?w=800&h=600&fit=crop',
+            'https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?w=800&h=600&fit=crop',
+            'https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=800&h=600&fit=crop',
+            'https://images.unsplash.com/photo-1493246507139-91e8fad9978e?w=800&h=600&fit=crop',
+            'https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=800&h=600&fit=crop'
+        ];
+        // Ultra fast heart creation
+        function createHearts() {
+            const symbols = ['💕', '💖', '💗', '💝'];
+            const frag = document.createDocumentFragment();
+            // Reduced count for performance
+            for (let i = 0; i < 6; i++) {
+                const heart = document.createElement('div');
+                heart.className = 'floating-heart gpu';
+                heart.textContent = symbols[i % symbols.length];
+                heart.style.left = Math.random() * 100 + '%';
+                heart.style.fontSize = (Math.random() * 10 + 25) + 'px';
+                heart.style.animationDelay = Math.random() * 4 + 's';
+                frag.appendChild(heart);
+            }
+            cache.hearts.appendChild(frag);
+        }
+        // Event listeners
+        function initEvents() {
+            // Single delegated click handler
+            cache.container.addEventListener('click', function(e) {
+                if (e.target === cache.container || e.target === cache.envelope) {
+                    openLetter();
+                }
+            });
+            cache.flap.addEventListener('click', e => e.stopPropagation());
+            cache.viewMore.addEventListener('click', showMusic);
+            cache.music.addEventListener('click', toggleMusic);
+            cache.next.addEventListener('click', startSlideshow);
+            // Performance: Passive listeners
+            window.addEventListener('resize', handleResize, { passive: true });
+        }
+        // Fast resize handler
+        function handleResize() {
+            requestAnimationFrame(() => {
+                document.documentElement.style.fontSize = window.innerWidth < 768 ? '14px' : '16px';
+            });
+        }
+        // Ultra fast letter opening
+        function openLetter() {
+            if (state.step !== 'closed') return;
+            state.step = 'opening';
+            // Immediate heartbeat
+            cache.heart.style.animation = 'heartbeat 0.5s ease-in-out';
+            // Fast flap opening
+            requestAnimationFrame(() => {
+                cache.flap.classList.add('open');
+            });
+            // Fast transition to open letter
+            setTimeout(() => {
+                cache.heart.style.opacity = '0';
+                cache.heart.style.transform = 'translateZ(-50%, -50%, 0) rotate(-45deg) scale(0)';
+            }, 600);
+            setTimeout(() => {
+                cache.letter.classList.add('show');
+                cache.envelope.style.opacity = '0';
+                cache.envelope.style.transform = 'translateZ(0) scale(0.2) rotateY(90deg)';
+                // Show button immediately
+                setTimeout(() => {
+                    cache.viewMore.style.display = 'inline-block';
+                    state.step = 'open';
+                }, 400);
+            }, 800);
+        }
+        // Show music button
+        function showMusic() {
+            if (state.step !== 'open') return;
+            state.step = 'music';
+            cache.viewMore.classList.add('hidden');
+            cache.music.style.display = 'block';
+        }
+        // Toggle music
+        function toggleMusic() {
+            if (state.step !== 'music') return;
+            state.musicPlaying = !state.musicPlaying;
+            if (state.musicPlaying) {
+                cache.audio.play().then(() => {
+                    cache.music.classList.add('playing');
+                    cache.music.textContent = '🎶';
+                    cache.next.classList.remove('hidden');
+                }).catch(() => {
+                    cache.next.classList.remove('hidden');
+                });
+            } else {
+                cache.audio.pause();
+                cache.music.classList.remove('playing');
+                cache.music.textContent = '🎵';
+            }
+        }
+        // Fast fairy lights creation
+        function createLights() {
+            const colors = ['light-gold', 'light-pink', 'light-warm'];
+            const frag = document.createDocumentFragment();
+            // Minimal count for performance
+            for (let i = 0; i < 25; i++) {
+                const wrapper = document.createElement('div');
+                wrapper.className = 'gpu';
+                wrapper.style.position = 'absolute';
+                wrapper.style.left = Math.random() * 100 + '%';
+                wrapper.style.top = Math.random() * 100 + '%';
+                const string = document.createElement('div');
+                string.className = 'light-string gpu';
+                const bulb = document.createElement('div');
+                bulb.className = `light light-bulb gpu ${colors[i % colors.length]}`;
+                bulb.style.animation = Math.random() > 0.5 ?
+                    `twinkle ${Math.random() * 2 + 1}s ease-in-out infinite` :
+                    `gentleGlow ${Math.random() * 2 + 1}s ease-in-out infinite`;
+                bulb.style.animationDelay = Math.random() * 2 + 's';
+                wrapper.appendChild(string);
+                wrapper.appendChild(bulb);
+                frag.appendChild(wrapper);
+            }
+            cache.lights.appendChild(frag);
+        }
+        // Fast slideshow start
+        function startSlideshow() {
+            if (state.step !== 'music') return;
+            state.step = 'slideshow';
+            cache.next.classList.add('hidden');
+            createLights();
+            cache.lights.classList.add('show');
+            createSlideshowImages();
+            cache.slideshow.classList.add('show');
+            showNextImage();
+        }
+        // Create slideshow images
+        function createSlideshowImages() {
+            const frag = document.createDocumentFragment();
+            const positions = [
+                { left: '20%', top: '15%' },
+                { left: '60%', top: '20%' },
+                { left: '35%', top: '30%' },
+                { left: '70%', top: '40%' },
+                { left: '25%', top: '50%' },
+                { left: '55%', top: '55%' }
+            ];
+            images.forEach((url, i) => {
+                const img = document.createElement('img');
+                img.src = url;
+                img.className = 'slideshow-image gpu';
+                img.alt = `Image ${i + 1}`;
+                const pos = positions[i % positions.length];
+                img.style.left = pos.left;
+                img.style.top = pos.top;
+                img.style.animationDelay = i * 0.1 + 's';
+                frag.appendChild(img);
+            });
+            cache.slideshow.appendChild(frag);
+        }
+        // Show next image
+        function showNextImage() {
+            const imgs = document.querySelectorAll('.slideshow-image');
+            if (state.imageIndex > 0) {
+                imgs[state.imageIndex - 1].classList.remove('show');
+            }
+            if (state.imageIndex < imgs.length) {
+                imgs[state.imageIndex].classList.add('show');
+                state.imageIndex++;
+                state.timer = setTimeout(showNextImage, 2500);
+            } else {
+                endSlideshow();
+            }
+        }
+        // End slideshow
+        function endSlideshow() {
+            clearTimeout(state.timer);
+            setTimeout(() => {
+                cache.slideshow.classList.remove('show');
+                cache.lights.classList.remove('show');
+                cache.final.classList.add('show');
+                createSparkles();
+                state.step = 'complete';
+            }, 1500);
+        }
+        // Fast sparkles
+        function createSparkles() {
+            const frag = document.createDocumentFragment();
+            // Minimal count
+            for (let i = 0; i < 15; i++) {
+                const sparkle = document.createElement('div');
+                sparkle.className = 'sparkle gpu';
+                const angle = (i / 15) * Math.PI * 2;
+                const radius = 80 + Math.random() * 40;
+                const x = Math.cos(angle) * radius;
+                const y = Math.sin(angle) * radius;
+                sparkle.style.left = `calc(50% + ${x}px)`;
+                sparkle.style.top = `calc(50% + ${y}px)`;
+                sparkle.style.animation = `sparkle 1s ease-in-out infinite`;
+                sparkle.style.animationDelay = Math.random() + 's';
+                frag.appendChild(sparkle);
+            }
+            cache.final.appendChild(frag);
+        }
+        // Ultra fast initialization
+        function init() {
+            initEvents();
+            createHearts();
+            // Remove loading immediately
+            setTimeout(() => {
+                cache.loading.classList.add('hidden');
+                state.step = 'closed';
+            }, 500); // Reduced from 1000ms
+        }
+        // Start immediately
+        init();
+        // Performance cleanup
+        window.addEventListener('beforeunload', () => {
+            clearTimeout(state.timer);
+            cache.audio.pause();
+        });
+        // Prevent context menu
+        document.addEventListener('contextmenu', e => {
+            if (e.target.tagName === 'IMG') e.preventDefault();
+        });
+    </script>
+</body>
+</html>

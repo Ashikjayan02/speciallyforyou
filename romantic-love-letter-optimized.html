@@ -1,0 +1,1097 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Romantic Love Letter - Optimized</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Great+Vibes&family=Pacifico&display=swap');
+        /* PERFORMANCE OPTIMIZATIONS */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        /* Enable hardware acceleration and reduce paint */
+        html, body {
+            height: 100%;
+            overflow: hidden;
+            will-change: transform;
+        }
+        body {
+            font-family: 'Dancing Script', cursive;
+            background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+            background-size: 400% 400%;
+            animation: gradientShift 15s ease infinite;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            transform: translateZ(0); /* Force hardware acceleration */
+        }
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        /* PERFORMANCE: Use transform3d for GPU acceleration */
+        .gpu-accelerated {
+            transform: translate3d(0, 0, 0);
+            backface-visibility: hidden;
+            perspective: 1000px;
+        }
+        /* Floating background hearts - OPTIMIZED */
+        .floating-hearts {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+            contain: layout style paint; /* Performance optimization */
+        }
+        .floating-heart {
+            position: absolute;
+            color: rgba(255, 255, 255, 0.3);
+            will-change: transform, opacity;
+            animation: floatHeart 8s infinite ease-in-out;
+            transform: translate3d(0, 0, 0);
+        }
+        @keyframes floatHeart {
+            0%, 100% {
+                transform: translate3d(0, 100vh, 0) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                transform: translate3d(0, -100vh, 0) rotate(720deg);
+                opacity: 0;
+            }
+        }
+        /* Letter Container - OPTIMIZED */
+        .letter-container {
+            position: relative;
+            width: 320px;
+            height: 420px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            z-index: 10;
+            will-change: transform;
+            transform: translate3d(0, 0, 0);
+        }
+        .letter-container:hover {
+            transform: translate3d(0, 0, 0) scale(1.02);
+        }
+        /* Envelope - OPTIMIZED */
+        .envelope {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(145deg, #ffeaa7, #fdcb6e);
+            border-radius: 12px;
+            box-shadow:
+                0 15px 35px rgba(0,0,0,0.3),
+                inset 0 1px 0 rgba(255,255,255,0.5),
+                inset 0 -1px 0 rgba(0,0,0,0.1);
+            position: relative;
+            transform-style: preserve-3d;
+            transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+            will-change: transform, opacity;
+            transform: translate3d(0, 0, 0);
+        }
+        .envelope::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg,
+                transparent 30%,
+                rgba(255,255,255,0.1) 50%,
+                transparent 70%);
+            border-radius: 12px;
+            pointer-events: none;
+        }
+        /* Envelope Flap - OPTIMIZED */
+        .envelope-flap {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 210px;
+            background: linear-gradient(145deg, #fdcb6e, #f39c12);
+            transform-origin: top center;
+            transition: transform 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+            clip-path: polygon(0 0, 100% 0, 50% 100%);
+            z-index: 10;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            will-change: transform;
+            transform: translate3d(0, 0, 0);
+        }
+        .envelope-flap.open {
+            transform: rotateX(-180deg) translate3d(0, 0, 0);
+        }
+        /* Heart Seal - OPTIMIZED */
+        .heart-seal {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 70px;
+            height: 70px;
+            background: #e74c3c;
+            transform: translate3d(-50%, -50%, 0) rotate(-45deg);
+            z-index: 20;
+            transition: all 0.4s ease;
+            cursor: pointer;
+            will-change: transform, opacity, filter;
+        }
+        .heart-seal::before,
+        .heart-seal::after {
+            content: '';
+            width: 70px;
+            height: 70px;
+            position: absolute;
+            background: #e74c3c;
+            border-radius: 50%;
+        }
+        .heart-seal::before {
+            top: -35px;
+            left: 0;
+        }
+        .heart-seal::after {
+            left: 35px;
+            top: 0;
+        }
+        .heart-seal:hover {
+            transform: translate3d(-50%, -50%, 0) rotate(-45deg) scale(1.1);
+            filter: brightness(1.1);
+        }
+        @keyframes heartbeat {
+            0%, 100% {
+                transform: translate3d(-50%, -50%, 0) rotate(-45deg) scale(1);
+                filter: brightness(1);
+            }
+            50% {
+                transform: translate3d(-50%, -50%, 0) rotate(-45deg) scale(1.15);
+                filter: brightness(1.2);
+            }
+        }
+        /* Open Letter - OPTIMIZED */
+        .letter-open {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            width: 550px;
+            min-height: 650px;
+            background: linear-gradient(145deg, #fff8f0, #ffe5cc);
+            border-radius: 15px;
+            padding: 50px;
+            box-shadow:
+                0 25px 60px rgba(0,0,0,0.4),
+                inset 0 1px 0 rgba(255,255,255,0.8),
+                inset 0 -1px 0 rgba(0,0,0,0.1);
+            opacity: 0;
+            transform: translate3d(-50%, -50%, 0) scale(0.3) rotateY(90deg);
+            transition: all 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+            display: none;
+            z-index: 100;
+            overflow: hidden;
+            will-change: transform, opacity;
+        }
+        .letter-open::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background:
+                repeating-linear-gradient(
+                    90deg,
+                    transparent,
+                    transparent 20px,
+                    rgba(255,255,255,0.03) 20px,
+                    rgba(255,255,255,0.03) 21px
+                ),
+                repeating-linear-gradient(
+                    0deg,
+                    transparent,
+                    transparent 20px,
+                    rgba(255,255,255,0.03) 20px,
+                    rgba(255,255,255,0.03) 21px
+                );
+            border-radius: 15px;
+            pointer-events: none;
+        }
+        .letter-open.show {
+            opacity: 1;
+            transform: translate3d(-50%, -50%, 0) scale(1) rotateY(0);
+            display: block;
+        }
+        .letter-content {
+            position: relative;
+            font-size: 26px;
+            line-height: 2;
+            color: #5d4e37;
+            text-align: center;
+            z-index: 1;
+            will-change: transform, opacity;
+            transform: translate3d(0, 0, 0);
+        }
+        .letter-content h2 {
+            font-size: 32px;
+            color: #e74c3c;
+            margin-bottom: 20px;
+            font-family: 'Great Vibes', cursive;
+        }
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translate3d(0, 40px, 0);
+            }
+            to {
+                opacity: 1;
+                transform: translate3d(0, 0, 0);
+            }
+        }
+        /* Buttons - OPTIMIZED */
+        .action-button {
+            background: linear-gradient(145deg, #ff6b9d, #c44569);
+            color: white;
+            border: none;
+            padding: 18px 40px;
+            font-size: 20px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-family: 'Pacifico', cursive;
+            font-weight: 700;
+            box-shadow:
+                0 15px 35px rgba(0,0,0,0.3),
+                inset 0 1px 0 rgba(255,255,255,0.3);
+            transition: all 0.3s ease;
+            margin-top: 40px;
+            display: inline-block;
+            opacity: 0;
+            transform: translate3d(0, 30px, 0) scale(0.9);
+            animation: fadeInUp 0.8s ease forwards;
+            position: relative;
+            overflow: hidden;
+            will-change: transform, box-shadow;
+        }
+        .action-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: left 0.6s ease;
+            will-change: transform;
+        }
+        .action-button:hover::before {
+            left: 100%;
+        }
+        .action-button:hover {
+            transform: translate3d(0, -8px, 0) scale(1.05);
+            box-shadow:
+                0 20px 45px rgba(0,0,0,0.4),
+                inset 0 1px 0 rgba(255,255,255,0.4);
+        }
+        .action-button:active {
+            transform: translate3d(0, -3px, 0) scale(1.02);
+        }
+        .action-button.hidden {
+            display: none;
+        }
+        /* Music Container - OPTIMIZED */
+        .music-container {
+            position: fixed;
+            top: 30px;
+            right: 30px;
+            z-index: 1000;
+        }
+        .music-toggle {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(145deg, #ff6b9d, #c44569);
+            border: none;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+            box-shadow:
+                0 10px 25px rgba(0,0,0,0.3),
+                inset 0 1px 0 rgba(255,255,255,0.3);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            will-change: transform, box-shadow;
+        }
+        .music-toggle::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1), transparent);
+            transform: rotate(45deg);
+            transition: transform 0.6s ease;
+            will-change: transform;
+        }
+        .music-toggle:hover::before {
+            transform: rotate(45deg) translate3d(100%, 100%, 0);
+        }
+        .music-toggle:hover {
+            transform: translate3d(0, 0, 0) scale(1.1) rotate(5deg);
+            box-shadow:
+                0 15px 35px rgba(0,0,0,0.4),
+                inset 0 1px 0 rgba(255,255,255,0.4);
+        }
+        .music-toggle.playing {
+            animation: pulse 2s ease-in-out infinite;
+        }
+        @keyframes pulse {
+            0%, 100% {
+                transform: translate3d(0, 0, 0) scale(1);
+                box-shadow:
+                    0 10px 25px rgba(0,0,0,0.3),
+                    0 0 0 0 rgba(255, 107, 157, 0.4);
+            }
+            50% {
+                transform: translate3d(0, 0, 0) scale(1.1);
+                box-shadow:
+                    0 15px 35px rgba(0,0,0,0.4),
+                    0 0 0 20px rgba(255, 107, 157, 0);
+            }
+        }
+        /* Image Slideshow - OPTIMIZED */
+        .slideshow-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: none;
+            z-index: 200;
+            background: rgba(0,0,0,0.85);
+            backdrop-filter: blur(5px);
+            will-change: opacity;
+        }
+        .slideshow-container.show {
+            display: block;
+        }
+        .slideshow-image {
+            position: absolute;
+            width: 350px;
+            height: 450px;
+            object-fit: cover;
+            border-radius: 20px;
+            box-shadow:
+                0 25px 60px rgba(0,0,0,0.6),
+                0 0 0 2px rgba(255,255,255,0.1);
+            opacity: 0;
+            transform: translate3d(0, 0, 0) scale(0.8) rotate(-5deg);
+            filter: brightness(0.9);
+            display: none;
+            transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+            will-change: transform, opacity, filter;
+        }
+        .slideshow-image.show {
+            display: block;
+            opacity: 1;
+            transform: translate3d(0, 0, 0) scale(1) rotate(0deg);
+            filter: brightness(1);
+            animation: hangImage 6s ease-in-out infinite;
+        }
+        @keyframes hangImage {
+            0%, 100% {
+                transform: translate3d(0, 0, 0) rotate(-3deg) scale(1);
+            }
+            25% {
+                transform: translate3d(0, -15px, 0) rotate(-1deg) scale(1.02);
+            }
+            50% {
+                transform: translate3d(0, -25px, 0) rotate(2deg) scale(1.01);
+            }
+            75% {
+                transform: translate3d(0, -15px, 0) rotate(1deg) scale(1.02);
+            }
+        }
+        /* Fairy Lights - OPTIMIZED */
+        .fairy-lights {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 250;
+            display: none;
+            contain: layout style paint; /* Performance optimization */
+        }
+        .fairy-lights.show {
+            display: block;
+        }
+        .light {
+            position: absolute;
+            border-radius: 50%;
+            opacity: 0;
+            will-change: transform, opacity, filter;
+        }
+        .light-bulb {
+            width: 16px;
+            height: 20px;
+            background: radial-gradient(circle at 30% 30%, #fff9c4, #ffd54f, #ff6f00);
+            border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+            box-shadow:
+                0 0 25px currentColor,
+                0 0 50px currentColor,
+                inset 0 0 10px rgba(255,255,255,0.5);
+            transform: translate3d(0, 0, 0);
+        }
+        .light-string {
+            width: 2px;
+            height: 30px;
+            background: linear-gradient(to bottom, #666, #333);
+            position: absolute;
+            top: -30px;
+            left: 50%;
+            transform: translate3d(-50%, 0, 0);
+        }
+        .light-gold {
+            color: #ffd700;
+            filter: hue-rotate(0deg);
+        }
+        .light-pink {
+            color: #ff69b4;
+            filter: hue-rotate(-20deg);
+        }
+        .light-warm {
+            color: #ffa500;
+            filter: hue-rotate(10deg);
+        }
+        .light-purple {
+            color: #9370db;
+            filter: hue-rotate(-40deg);
+        }
+        @keyframes twinkle {
+            0%, 100% {
+                opacity: 0;
+                transform: translate3d(0, 0, 0) scale(0.5) rotate(0deg);
+                filter: brightness(0.5);
+            }
+            10% {
+                opacity: 1;
+                transform: translate3d(0, 0, 0) scale(1) rotate(180deg);
+                filter: brightness(1.2);
+            }
+            50% {
+                opacity: 1;
+                transform: translate3d(0, 0, 0) scale(1.3) rotate(360deg);
+                filter: brightness(1.5);
+            }
+            90% {
+                opacity: 1;
+                transform: translate3d(0, 0, 0) scale(1.1) rotate(540deg);
+                filter: brightness(1.1);
+            }
+        }
+        @keyframes gentleGlow {
+            0%, 100% {
+                opacity: 0.6;
+                transform: translate3d(0, 0, 0) scale(1);
+                filter: brightness(0.8);
+            }
+            50% {
+                opacity: 1;
+                transform: translate3d(0, 0, 0) scale(1.1);
+                filter: brightness(1.3);
+            }
+        }
+        /* Final Text - OPTIMIZED */
+        .final-text {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate3d(-50%, -50%, 0) scale(0);
+            font-family: 'Great Vibes', cursive;
+            font-size: 5rem;
+            color: #fff;
+            text-align: center;
+            line-height: 1.2;
+            z-index: 300;
+            opacity: 0;
+            display: none;
+            text-shadow:
+                0 0 20px rgba(255, 107, 157, 0.8),
+                0 0 40px rgba(255, 107, 157, 0.6),
+                0 0 60px rgba(255, 107, 157, 0.4),
+                0 0 80px rgba(255, 107, 157, 0.2);
+            will-change: transform, opacity, text-shadow;
+        }
+        .final-text.show {
+            opacity: 1;
+            transform: translate3d(-50%, -50%, 0) scale(1);
+            display: block;
+            animation: glowText 4s ease-in-out infinite;
+        }
+        @keyframes glowText {
+            0%, 100% {
+                text-shadow:
+                    0 0 30px rgba(255, 107, 157, 0.8),
+                    0 0 60px rgba(255, 107, 157, 0.6),
+                    0 0 90px rgba(255, 107, 157, 0.4),
+                    0 0 120px rgba(255, 107, 157, 0.2);
+                transform: translate3d(-50%, -50%, 0) scale(1);
+            }
+            25% {
+                text-shadow:
+                    0 0 40px rgba(255, 107, 157, 1),
+                    0 0 80px rgba(255, 107, 157, 0.8),
+                    0 0 120px rgba(255, 107, 157, 0.6),
+                    0 0 160px rgba(255, 107, 157, 0.4);
+                transform: translate3d(-50%, -50%, 0) scale(1.05);
+            }
+            50% {
+                text-shadow:
+                    0 0 50px rgba(255, 182, 193, 1),
+                    0 0 100px rgba(255, 182, 193, 0.8),
+                    0 0 150px rgba(255, 182, 193, 0.6),
+                    0 0 200px rgba(255, 182, 193, 0.4);
+                transform: translate3d(-50%, -50%, 0) scale(1.1);
+            }
+            75% {
+                text-shadow:
+                    0 0 40px rgba(255, 107, 157, 1),
+                    0 0 80px rgba(255, 107, 157, 0.8),
+                    0 0 120px rgba(255, 107, 157, 0.6),
+                    0 0 160px rgba(255, 107, 157, 0.4);
+                transform: translate3d(-50%, -50%, 0) scale(1.05);
+            }
+        }
+        /* Sparkles for final text - OPTIMIZED */
+        .sparkle {
+            position: absolute;
+            width: 6px;
+            height: 6px;
+            background: radial-gradient(circle, #fff, #ffd700);
+            border-radius: 50%;
+            opacity: 0;
+            box-shadow: 0 0 10px #ffd700;
+            will-change: transform, opacity;
+        }
+        @keyframes sparkle {
+            0%, 100% {
+                opacity: 0;
+                transform: translate3d(0, 0, 0) scale(0) rotate(0deg);
+            }
+            50% {
+                opacity: 1;
+                transform: translate3d(0, 0, 0) scale(1.5) rotate(180deg);
+            }
+        }
+        /* Loading animation - OPTIMIZED */
+        .loading-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            opacity: 1;
+            transition: opacity 0.5s ease;
+            will-change: opacity;
+        }
+        .loading-overlay.hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+        .loading-text {
+            color: white;
+            font-size: 24px;
+            font-family: 'Pacifico', cursive;
+            animation: pulse 1.5s ease-in-out infinite;
+            will-change: transform;
+        }
+        /* PERFORMANCE: Reduce repaints with will-change */
+        .will-change-transform {
+            will-change: transform;
+        }
+        .will-change-opacity {
+            will-change: opacity;
+        }
+        .will-change-all {
+            will-change: transform, opacity;
+        }
+        /* Responsive Design - OPTIMIZED */
+        @media (max-width: 768px) {
+            .letter-container {
+                width: 280px;
+                height: 370px;
+            }
+            .letter-open {
+                width: 90%;
+                min-height: 550px;
+                padding: 40px;
+            }
+            .letter-content {
+                font-size: 22px;
+            }
+            .letter-content h2 {
+                font-size: 28px;
+            }
+            .final-text {
+                font-size: 3.5rem;
+                padding: 20px;
+            }
+            .slideshow-image {
+                width: 280px;
+                height: 360px;
+            }
+            .action-button {
+                padding: 15px 30px;
+                font-size: 18px;
+            }
+            .music-toggle {
+                width: 50px;
+                height: 50px;
+                font-size: 20px;
+            }
+            .music-container {
+                top: 20px;
+                right: 20px;
+            }
+        }
+        @media (max-width: 480px) {
+            .letter-container {
+                width: 240px;
+                height: 320px;
+            }
+            .letter-open {
+                width: 95%;
+                padding: 30px;
+                min-height: 500px;
+            }
+            .letter-content {
+                font-size: 20px;
+            }
+            .letter-content h2 {
+                font-size: 24px;
+            }
+            .final-text {
+                font-size: 2.8rem;
+            }
+            .slideshow-image {
+                width: 220px;
+                height: 300px;
+            }
+            .action-button {
+                padding: 12px 25px;
+                font-size: 16px;
+            }
+        }
+        /* PERFORMANCE: Hide elements that are not visible */
+        .hidden-element {
+            display: none !important;
+        }
+        .invisible-element {
+            opacity: 0 !important;
+            pointer-events: none !important;
+        }
+        /* PERFORMANCE: Optimize for reduced motion */
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Loading Overlay -->
+    <div class="loading-overlay will-change-opacity" id="loadingOverlay">
+        <div class="loading-text will-change-transform">Preparing something special... 💕</div>
+    </div>
+    <!-- Floating Background Hearts -->
+    <div class="floating-hearts will-change-all" id="floatingHearts"></div>
+    <!-- Letter Container -->
+    <div class="letter-container gpu-accelerated will-change-all" id="letterContainer">
+        <div class="envelope gpu-accelerated will-change-all" id="envelope">
+            <div class="envelope-flap gpu-accelerated will-change-transform" id="envelopeFlap"></div>
+            <div class="heart-seal gpu-accelerated will-change-all" id="heartSeal"></div>
+        </div>
+    </div>
+    <!-- Open Letter -->
+    <div class="letter-open gpu-accelerated will-change-all" id="letterOpen">
+        <div class="letter-content will-change-all">
+            <h2>My Dearest Love,</h2>
+            <p>Every moment with you feels like a beautiful dream come true. Your smile brightens my entire world, and your love fills my heart with endless joy and happiness.</p>
+            <p>You are my everything, my forever, my always. I cherish every second we spend together.</p>
+            <p>With all my love and my entire heart,</p>
+            <p>Forever yours 💕</p>
+        </div>
+        <button class="action-button will-change-all" id="viewMoreBtn" style="display: none;">View More</button>
+        <button class="action-button will-change-all hidden" id="nextBtn">Next</button>
+    </div>
+    <!-- Music Toggle -->
+    <div class="music-container">
+        <button class="music-toggle gpu-accelerated will-change-all" id="musicToggle" style="display: none;">🎵</button>
+    </div>
+    <!-- Image Slideshow -->
+    <div class="slideshow-container will-change-opacity" id="slideshowContainer">
+        <!-- Images will be added dynamically -->
+    </div>
+    <!-- Fairy Lights -->
+    <div class="fairy-lights will-change-all" id="fairyLights">
+        <!-- Lights will be added dynamically -->
+    </div>
+    <!-- Final Text -->
+    <div class="final-text gpu-accelerated will-change-all" id="finalText">
+        I LOVE YOU FOREVER<br>BUJUKKKUUU 💕
+    </div>
+    <!-- Hidden Audio Element -->
+    <audio id="backgroundMusic" loop preload="none">
+        <source src="https://www.bensound.com/bensound-music/bensound-romantic.mp3" type="audio/mpeg">
+        <source src="https://www.bensound.com/bensound-music/bensound-sweet.mp3" type="audio/mpeg">
+        <source src="https://www.bensound.com/bensound-music/bensound-tenderness.mp3" type="audio/mpeg">
+    </audio>
+    <script>
+        // PERFORMANCE: Use requestAnimationFrame for smooth animations
+        // PERFORMANCE: Cache DOM elements to avoid repeated queries
+        // PERFORMANCE: Use Event Delegation where possible
+        // PERFORMANCE: Minimize DOM manipulations
+        // PERFORMANCE: Use CSS classes instead of inline styles for animations
+        // Cache DOM elements
+        const elements = {
+            loadingOverlay: document.getElementById('loadingOverlay'),
+            floatingHearts: document.getElementById('floatingHearts'),
+            letterContainer: document.getElementById('letterContainer'),
+            envelope: document.getElementById('envelope'),
+            envelopeFlap: document.getElementById('envelopeFlap'),
+            heartSeal: document.getElementById('heartSeal'),
+            letterOpen: document.getElementById('letterOpen'),
+            viewMoreBtn: document.getElementById('viewMoreBtn'),
+            nextBtn: document.getElementById('nextBtn'),
+            musicToggle: document.getElementById('musicToggle'),
+            backgroundMusic: document.getElementById('backgroundMusic'),
+            slideshowContainer: document.getElementById('slideshowContainer'),
+            fairyLights: document.getElementById('fairyLights'),
+            finalText: document.getElementById('finalText')
+        };
+        // PERFORMANCE: State management
+        let state = {
+            currentStep: 'loading',
+            currentImageIndex: 0,
+            musicPlaying: false,
+            slideshowInterval: null,
+            animationFrameId: null,
+            isTransitioning: false
+        };
+        // Image URLs - using romantic themes including the provided image
+        const imageUrls = [
+            'https://t3.ftcdn.net/jpg/02/24/46/02/360_F_224460249_zx5jOIw0qvpC0lzqfHZ0PvyLNO5dsVBh.jpg',
+            'https://images.unsplash.com/photo-1518199266791-5375a83190b7?w=800&h=600&fit=crop',
+            'https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?w=800&h=600&fit=crop',
+            'https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=800&h=600&fit=crop',
+            'https://images.unsplash.com/photo-1493246507139-91e8fad9978e?w=800&h=600&fit=crop',
+            'https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=800&h=600&fit=crop',
+            'https://images.unsplash.com/photo-1516594798947-e65505dbb29d?w=800&h=600&fit=crop'
+        ];
+        // PERFORMANCE: Optimized heart creation with requestAnimationFrame
+        function createFloatingHearts() {
+            const heartSymbols = ['💕', '💖', '💗', '💝', '💘', '💓', '💞'];
+            const fragment = document.createDocumentFragment();
+            // PERFORMANCE: Reduce number of hearts for better performance
+            for (let i = 0; i < 10; i++) {
+                const heart = document.createElement('div');
+                heart.className = 'floating-heart will-change-all';
+                heart.textContent = heartSymbols[Math.floor(Math.random() * heartSymbols.length)];
+                heart.style.left = Math.random() * 100 + '%';
+                heart.style.animationDelay = Math.random() * 8 + 's';
+                heart.style.fontSize = (Math.random() * 15 + 20) + 'px';
+                heart.style.animationDuration = (Math.random() * 3 + 8) + 's';
+                fragment.appendChild(heart);
+            }
+            elements.floatingHearts.appendChild(fragment);
+        }
+        // PERFORMANCE: Event delegation for better performance
+        function initializeEventListeners() {
+            // Single click listener on container with delegation
+            elements.letterContainer.addEventListener('click', function(e) {
+                if (e.target === elements.letterContainer || e.target === elements.envelope) {
+                    openLetter();
+                }
+            });
+            // Prevent envelope flap clicks from bubbling
+            elements.envelopeFlap.addEventListener('click', function(e) {
+                e.stopPropagation();
+            });
+            // Button listeners
+            elements.viewMoreBtn.addEventListener('click', showMusicButton);
+            elements.musicToggle.addEventListener('click', toggleMusic);
+            elements.nextBtn.addEventListener('click', startSlideshow);
+            // PERFORMANCE: Passive event listeners for better scroll performance
+            window.addEventListener('resize', handleResize, { passive: true });
+            window.addEventListener('orientationchange', handleResize, { passive: true });
+        }
+        // PERFORMANCE: Optimized resize handler
+        function handleResize() {
+            requestAnimationFrame(() => {
+                const fontSize = window.innerWidth < 768 ? '14px' : '16px';
+                document.documentElement.style.fontSize = fontSize;
+            });
+        }
+        // PERFORMANCE: Smooth letter opening with reduced delays
+        function openLetter() {
+            if (state.currentStep !== 'closed' || state.isTransitioning) return;
+            state.isTransitioning = true;
+            state.currentStep = 'opening';
+            // Start heartbeat animation immediately
+            elements.heartSeal.style.animation = 'heartbeat 0.8s ease-in-out';
+            // Open envelope flap sooner
+            requestAnimationFrame(() => {
+                elements.envelopeFlap.classList.add('open');
+            });
+            // Hide heart seal faster
+            setTimeout(() => {
+                elements.heartSeal.style.opacity = '0';
+                elements.heartSeal.style.transform = 'translate3d(-50%, -50%, 0) rotate(-45deg) scale(0)';
+                elements.heartSeal.style.transition = 'all 0.6s ease';
+            }, 1000); // Reduced from 1500ms
+            // Show open letter sooner
+            setTimeout(() => {
+                elements.letterOpen.classList.add('show');
+                elements.envelope.style.opacity = '0';
+                elements.envelope.style.transform = 'translate3d(0, 0, 0) scale(0.3) rotateY(90deg)';
+                elements.envelope.style.transition = 'all 1s ease';
+                // Show View More button faster
+                setTimeout(() => {
+                    elements.viewMoreBtn.style.display = 'inline-block';
+                    elements.viewMoreBtn.style.animationDelay = '0s';
+                    state.currentStep = 'open';
+                    state.isTransitioning = false;
+                }, 1200); // Reduced from 2000ms
+            }, 1500); // Reduced from 2000ms
+        }
+        // Show music button
+        function showMusicButton() {
+            if (state.currentStep !== 'open' || state.isTransitioning) return;
+            state.isTransitioning = true;
+            elements.viewMoreBtn.classList.add('hidden');
+            elements.musicToggle.style.display = 'block';
+            elements.musicToggle.style.animation = 'fadeInUp 0.6s ease';
+            state.currentStep = 'music';
+            state.isTransitioning = false;
+        }
+        // Toggle music with optimized audio handling
+        function toggleMusic() {
+            if (state.currentStep !== 'music' || state.isTransitioning) return;
+            state.isTransitioning = true;
+            state.musicPlaying = !state.musicPlaying;
+            if (state.musicPlaying) {
+                // PERFORMANCE: Try to play music with user interaction
+                const playPromise = elements.backgroundMusic.play();
+                if (playPromise !== undefined) {
+                    playPromise.then(() => {
+                        elements.musicToggle.classList.add('playing');
+                        elements.musicToggle.innerHTML = '🎶';
+                        // Show Next button with reduced delay
+                        setTimeout(() => {
+                            elements.nextBtn.classList.remove('hidden');
+                            elements.nextBtn.style.animationDelay = '0s';
+                            state.isTransitioning = false;
+                        }, 500); // Reduced from 1000ms
+                    }).catch(error => {
+                        console.log('Music autoplay failed:', error);
+                        // Still show Next button even if music fails
+                        elements.nextBtn.classList.remove('hidden');
+                        elements.nextBtn.style.animationDelay = '0s';
+                        state.isTransitioning = false;
+                    });
+                }
+            } else {
+                elements.backgroundMusic.pause();
+                elements.musicToggle.classList.remove('playing');
+                elements.musicToggle.innerHTML = '🎵';
+                state.isTransitioning = false;
+            }
+        }
+        // PERFORMANCE: Optimized fairy lights creation with fragment
+        function createFairyLights() {
+            const lightCount = 40; // Reduced from 60 for performance
+            const colors = ['light-gold', 'light-pink', 'light-warm', 'light-purple'];
+            const fragment = document.createDocumentFragment();
+            for (let i = 0; i < lightCount; i++) {
+                const lightWrapper = document.createElement('div');
+                lightWrapper.className = 'will-change-all';
+                lightWrapper.style.position = 'absolute';
+                lightWrapper.style.left = Math.random() * 100 + '%';
+                lightWrapper.style.top = Math.random() * 100 + '%';
+                // Create string
+                const lightString = document.createElement('div');
+                lightString.className = 'light-string will-change-transform';
+                // Create bulb
+                const light = document.createElement('div');
+                light.className = `light light-bulb will-change-all ${colors[Math.floor(Math.random() * colors.length)]}`;
+                // PERFORMANCE: Simplified animation with better performance
+                const animationType = Math.random() > 0.5 ? 'twinkle' : 'gentleGlow';
+                const duration = (Math.random() * 3 + 2) + 's';
+                const delay = Math.random() * 3 + 's'; // Reduced delay range
+                light.style.animation = `${animationType} ${duration} ease-in-out infinite`;
+                light.style.animationDelay = delay;
+                lightWrapper.appendChild(lightString);
+                lightWrapper.appendChild(light);
+                fragment.appendChild(lightWrapper);
+            }
+            elements.fairyLights.appendChild(fragment);
+        }
+        // Start slideshow with optimized timing
+        function startSlideshow() {
+            if (state.currentStep !== 'music' || state.isTransitioning) return;
+            state.isTransitioning = true;
+            state.currentStep = 'slideshow';
+            elements.nextBtn.classList.add('hidden');
+            // Create and show fairy lights
+            createFairyLights();
+            elements.fairyLights.classList.add('show');
+            // Create slideshow images
+            createSlideshowImages();
+            elements.slideshowContainer.classList.add('show');
+            // Start showing images immediately
+            showNextImage();
+            state.isTransitioning = false;
+        }
+        // PERFORMANCE: Optimized slideshow image creation
+        function createSlideshowImages() {
+            const fragment = document.createDocumentFragment();
+            const positions = [
+                { left: '15%', top: '10%' },
+                { left: '60%', top: '15%' },
+                { left: '35%', top: '25%' },
+                { left: '70%', top: '35%' },
+                { left: '20%', top: '45%' },
+                { left: '55%', top: '50%' },
+                { left: '40%', top: '60%' }
+            ];
+            imageUrls.forEach((url, index) => {
+                const img = document.createElement('img');
+                img.src = url;
+                img.className = 'slideshow-image will-change-all';
+                img.alt = `Romantic image ${index + 1}`;
+                const pos = positions[index % positions.length];
+                img.style.left = pos.left;
+                img.style.top = pos.top;
+                img.style.animationDelay = (index * 0.2) + 's'; // Reduced delay
+                fragment.appendChild(img);
+            });
+            elements.slideshowContainer.appendChild(fragment);
+        }
+        // PERFORMANCE: Optimized image transitions
+        function showNextImage() {
+            const images = document.querySelectorAll('.slideshow-image');
+            if (currentImageIndex > 0 && images[currentImageIndex - 1]) {
+                images[currentImageIndex - 1].classList.remove('show');
+            }
+            if (state.currentImageIndex < images.length) {
+                images[state.currentImageIndex].classList.add('show');
+                state.currentImageIndex++;
+                // Use requestAnimationFrame for smoother transitions
+                state.slideshowInterval = requestAnimationFrame(() => {
+                    setTimeout(() => {
+                        showNextImage();
+                    }, 3000); // Reduced from 3500ms
+                });
+            } else {
+                endSlideshow();
+            }
+        }
+        // End slideshow with optimized timing
+        function endSlideshow() {
+            // Clear any pending intervals
+            if (state.slideshowInterval) {
+                cancelAnimationFrame(state.slideshowInterval);
+            }
+            setTimeout(() => {
+                elements.slideshowContainer.classList.remove('show');
+                elements.fairyLights.classList.remove('show');
+                // Show final text
+                elements.finalText.classList.add('show');
+                // Create sparkles with requestAnimationFrame
+                requestAnimationFrame(() => {
+                    createSparkles();
+                });
+                state.currentStep = 'complete';
+            }, 2000); // Reduced from 2500ms
+        }
+        // PERFORMANCE: Optimized sparkle creation
+        function createSparkles() {
+            const sparkleCount = 20; // Reduced from 30
+            const fragment = document.createDocumentFragment();
+            for (let i = 0; i < sparkleCount; i++) {
+                const sparkle = document.createElement('div');
+                sparkle.className = 'sparkle will-change-all';
+                const angle = (i / sparkleCount) * Math.PI * 2;
+                const radius = 100 + Math.random() * 80; // Reduced radius
+                const x = Math.cos(angle) * radius;
+                const y = Math.sin(angle) * radius;
+                sparkle.style.left = `calc(50% + ${x}px)`;
+                sparkle.style.top = `calc(50% + ${y}px)`;
+                sparkle.style.animationDelay = (Math.random() * 2) + 's'; // Reduced delay
+                sparkle.style.animation = 'sparkle 1.5s ease-in-out infinite'; // Reduced duration
+                fragment.appendChild(sparkle);
+            }
+            elements.finalText.appendChild(fragment);
+        }
+        // PERFORMANCE: Optimized initialization
+        function initialize() {
+            initializeEventListeners();
+            createFloatingHearts();
+            // Add floating animation immediately
+            elements.letterContainer.style.animation = 'hangImage 8s ease-in-out infinite';
+            // Hide loading overlay faster
+            setTimeout(() => {
+                elements.loadingOverlay.classList.add('hidden');
+                state.currentStep = 'closed';
+            }, 1000); // Reduced from 2000ms
+        }
+        // PERFORMANCE: Start initialization when DOM is ready
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initialize);
+        } else {
+            initialize();
+        }
+        // PERFORMANCE: Prevent context menu on images
+        document.addEventListener('contextmenu', (e) => {
+            if (e.target.tagName === 'IMG') {
+                e.preventDefault();
+            }
+        });
+        // PERFORMANCE: Clean up function for memory management
+        function cleanup() {
+            if (state.slideshowInterval) {
+                cancelAnimationFrame(state.slideshowInterval);
+            }
+            if (elements.backgroundMusic) {
+                elements.backgroundMusic.pause();
+                elements.backgroundMusic.src = '';
+            }
+        }
+        // PERFORMANCE: Clean up on page unload
+        window.addEventListener('beforeunload', cleanup);
+    </script>
+</body>
+</html>

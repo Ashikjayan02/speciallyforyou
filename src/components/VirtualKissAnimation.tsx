@@ -12,7 +12,6 @@ const VirtualKissAnimation: React.FC<VirtualKissAnimationProps> = ({
   isActive,
   onComplete
 }) => {
-  // Generate fixed kiss positions to avoid rendering issues
   const kissPositions = [
     { x: '10%', y: '10%', delay: 0 },
     { x: '20%', y: '30%', delay: 0.1 },
@@ -61,8 +60,8 @@ const VirtualKissAnimation: React.FC<VirtualKissAnimationProps> = ({
             repeat: Infinity,
             repeatDelay: 1,
           }}
-          onAnimationComplete={(definition) => {
-            if (i === kissPositions.length - 1 && definition.opacity === 0) {
+          onAnimationComplete={() => {
+            if (i === kissPositions.length - 1) {
               setTimeout(onComplete, 1000)
             }
           }}
